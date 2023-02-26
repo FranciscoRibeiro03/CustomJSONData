@@ -133,7 +133,7 @@ MAKE_PAPER_HOOK_MATCH(BeatmapData_GetCopy, &CustomBeatmapData::GetCopy, BeatmapD
     static auto CustomBeatmapDataKlass = classof(CustomBeatmapData*);
 
     if (self->klass == CustomBeatmapDataKlass) {
-        return reinterpret_cast<CustomBeatmapData *>(self)->GetCopy();
+        return reinterpret_cast<CustomBeatmapData *>(self)->GetCopyOverride(self);
     }
 
     return BeatmapData_GetCopy(self);
